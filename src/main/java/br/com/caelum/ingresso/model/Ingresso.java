@@ -4,8 +4,8 @@ import java.math.BigDecimal;
 
 import javax.persistence.*;
 
-
 import br.com.caelum.ingresso.model.descontos.Desconto;
+import br.com.caelum.ingresso.model.TipoDeIngresso;
 
 @Entity
 public class Ingresso {
@@ -47,8 +47,34 @@ public class Ingresso {
 		return lugar;
 	}
 
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	public TipoDeIngresso getTipoDeIngresso() {
+		return tipoDeIngresso;
+	}
+
+	public void setTipoDeIngresso(TipoDeIngresso tipoDeIngresso) {
+		this.tipoDeIngresso = tipoDeIngresso;
+	}
+
+	public void setSessao(Sessao sessao) {
+		this.sessao = sessao;
+	}
+
+	public void setPreco(BigDecimal preco) {
+		this.preco = preco;
+	}
+
 	public void setLugar(Lugar lugar) {
 		this.lugar = lugar;
 	}
+
+
 
 }
