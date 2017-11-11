@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -15,6 +16,7 @@ import br.com.caelum.ingresso.dao.SessaoDao;
 import br.com.caelum.ingresso.model.Carrinho;
 import br.com.caelum.ingresso.model.Cartao;
 import br.com.caelum.ingresso.model.form.CarrinhoForm;
+
 
 @Controller
 public class CompraController {
@@ -37,7 +39,7 @@ public class CompraController {
 		return modelAndView;
 	}
 	
-	@PostMapping("/compra")
+	@GetMapping("/compra")
 	public ModelAndView checkout(Cartao cartao){
 		ModelAndView modelAndView = new ModelAndView("compra/pagamento");
 		
