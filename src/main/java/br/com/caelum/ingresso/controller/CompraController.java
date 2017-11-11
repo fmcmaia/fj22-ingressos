@@ -28,4 +28,13 @@ public class CompraController {
 		
 		return modelAndView;
 	}
+	
+	@PostMapping("/compra")
+	public ModelAndView checkout(){
+		ModelAndView modelAndView = new ModelAndView("compra/pagamento");
+		
+		modelAndView.addObject("carrinho", carrinho);
+	
+		return modelAndView;
+	}
 }
